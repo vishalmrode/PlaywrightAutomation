@@ -1,12 +1,12 @@
 # Playwright Automation
 
------------------------------------------------------------------------------------------
-## Playwright Installation `#0969DA`
------------------------------------------------------------------------------------------
 [!IMPORTANT]
-Official Website:
------------------
-   [PlayWright](https://playwright.dev/docs/intro).
+Official Website: [PlayWright](https://playwright.dev/docs/intro).
+-----------------  
+
+-----------------------------------------------------------------------------------------
+## Playwright Installation
+-----------------------------------------------------------------------------------------
 
 1) Nodejs
 2) VS Code Editor
@@ -34,18 +34,18 @@ Official Website:
 
 
 -------------------------------------------------------------------------------------------
-## How To Create and Run Tests `#0969DA`
------------------------------
+## How To Create and Run Tests 
+-------------------------------------------------------------------------------------------
 1) Create a new file under test folder
 2) Add module ‘playwright/test’
     const { test, expect } = require('@playwright/test');
     
     [!IMPORTANT]
-    _ test, expect  ------ functions from @playwright/test module
+    + test, expect  ------ functions from @playwright/test module
     * Playwright Test provides a test function to declare tests and expect function to write assertions.
 
 3) Create a test block - test(title, testFunction)
-    _ The keyword 'async' before a function makes the function return a promise
+    + The keyword 'async' before a function makes the function return a promise
     * The keyword 'await' before a function makes the function wait for a promise
 
 4) Run the test
