@@ -23,7 +23,13 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
   4. Check Playwright Version
       + `npm playwright -v`     //return installed version of playwright.
 
-5) install playwright using vs code extension
+## Install Cucumber 
+  1) Invoke BDD inside your machine
+    + `npm i -D playwright-bdd`
+  2) Invoke Cucumber
+    + `npm i -D @cucumber/cucumber@latest`
+  3) Install Cucumber extension 
+    + Extension ID:'alexkrechik.cucumberautocomplete'
 
 ### Run the playwright test
 -----------
@@ -33,7 +39,6 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 ### HTML report
 -------------
   `npx playwright show-report`
-
 
 -------------------------------------------------------------------------------------------
 ## How To Create and Run Tests 
@@ -60,3 +65,5 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     7) `npx playwright test --headed`                   // runs tests in headed mode
     8) `npx playwright test --debug`                    // debug tests
     9) `npx playwright test example.spec.js --debug`           // debug specific test file
+    10) `npx playwright test --reporter=list`           // It will show the test cases are passed/falied at terminal
+    11) `npx playwright test --ui`                    // Playwright will be opened in UI mode

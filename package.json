@@ -8,7 +8,9 @@
   "author": "Vishal Rode",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^10.8.0",
     "@playwright/test": "^1.45.3",
-    "@types/node": "^20.14.11"
+    "@types/node": "^20.14.11",
+    "playwright-bdd": "^7.0.1"
   }
 }
