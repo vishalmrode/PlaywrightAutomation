@@ -13,13 +13,13 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 3) Create project folder  and  open it in VSCode
 
 4) Install playwright  using terminal
-  npm init playwright@latest
+    + npm init playwright@latest
 
   1. package.json  --- node project management file
   2. playwright.config.js  -- playwright configuration
   3. tests --- we can all teh playwright tests
   4. Check Playwright Version
-      npm playwright -v   //return installed version of playwright.
+      + npm playwright -v   //return installed version of playwright.
 
 5) install playwright using vs code extension
 
@@ -49,12 +49,12 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     * The keyword 'await' before a function makes the function wait for a promise
 
 4) Run the test
-    1) npx playwright test --project=chromium --headed  FirstTest.spec.js
-    2) npx playwright test                 runs all tests on all browsers in headless mode
-    3) npx playwright test  MyTest1.spec.js            runs a specific test file
-    4) npx playwright test  MyTest1.spec.js  MyTest2.spec.js           runs the files specified
-    5) npx playwright test -g "test title"             runs test with the title
-    6) npx playwright test --project=chromium      runs on specific browser
-    7) npx playwright test --headed         runs tests in headed mode
-    8) npx playwright test --debug         debug tests
-    9) npx playwright test example.spec.js --debug           debug specific test file
+    1) npx playwright test --project=chromium --headed  example.spec.js
+    2) npx playwright test                    // runs all tests on all browsers in headless mode
+    3) npx playwright test  example.spec.js            // runs a specific test file
+    4) npx playwright test  example.spec.js  MyTest2.spec.js           // runs the files specified
+    5) npx playwright test -g "test title"             // runs test with the title
+    6) npx playwright test --project=chromium      // runs on specific browser
+    7) npx playwright test --headed         // runs tests in headed mode
+    8) npx playwright test --debug         // debug tests
+    9) npx playwright test example.spec.js --debug           // debug specific test file
