@@ -29,7 +29,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
   2) Invoke Cucumber
     + `npm i -D @cucumber/cucumber@latest`
   3) Install Cucumber extension 
-      + Extension ID:'alexkrechik.cucumberautocomplete'
+      + __Extension ID :__ **alexkrechik.cucumberautocomplete**
 
 ### Run the playwright test
 -----------
