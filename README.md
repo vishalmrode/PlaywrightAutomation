@@ -9,13 +9,15 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 -----------------------------------------------------------------------------------------
 ## Playwright Installation
 -----------------------------------------------------------------------------------------
+[!TIP]
+[Quickstart for writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github).
 
-1) Nodejs
-2) VS Code Editor
-3) Create project folder  and  open it in VSCode
+1) Nodejs `#0969DA`
+2) VS Code Editor `#0969DA`
+3) Create project folder  and  open it in VSCode `#0969DA`
 
-4) Install playwright  using terminal
-    + `npm init playwright@latest`
+4) Install playwright  using terminal `#0969DA`
+      + `npm init playwright@latest`
 
   1. package.json           ---  node project management file
   2. playwright.config.js   ---  playwright configuration
@@ -32,11 +34,11 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
       + __Extension ID :__ **alexkrechik.cucumberautocomplete**
 
 ### Run the playwright test
---
-    | Command | Description |
-    | :--- | :--- |
-    | `npx playwright test`| Headless Mode |
-    | `npx playwright test --headed`| Headed Mode |
+-----------
+  | Command | Description |
+  | :--- | :--- |
+  | `npx playwright test`| Headless Mode |
+  | `npx playwright test --headed`| Headed Mode |
 
 ### HTML report
 -------------
@@ -47,11 +49,11 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 -------------------------------------------------------------------------------------------
 1) Create a new file under test folder
 2) Add module ‘playwright/test’
-    const { test, expect } = require('@playwright/test');
+      + const { test, expect } = require('@playwright/test');
     
     [!IMPORTANT]
-    + test, expect  ------ functions from @playwright/test module
-    * Playwright Test provides a test function to declare tests and expect function to write assertions.
+      + test, expect  ------ functions from @playwright/test module
+      * Playwright Test provides a test function to declare tests and expect function to write assertions.
 
 3) Create a test block - test(title, testFunction)
 
