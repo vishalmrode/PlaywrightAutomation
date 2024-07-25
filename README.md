@@ -33,8 +33,8 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 
 ### Run the playwright test
 -----------
-    | Command | Description |
-    | :--- | :--- |
+  | Command | Description |
+  | :--- | :--- |
   | `npx playwright test`| Headless Mode |
   | `npx playwright test --headed`| Headed Mode |
 
