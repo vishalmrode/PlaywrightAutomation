@@ -25,9 +25,9 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 
 ## Install Cucumber 
   1) Invoke BDD inside your machine
-    + `npm i -D playwright-bdd`
+      + `npm i -D playwright-bdd`
   2) Invoke Cucumber
-    + `npm i -D @cucumber/cucumber@latest`
+      + `npm i -D @cucumber/cucumber@latest`
   3) Install Cucumber extension 
       + __Extension ID :__ **alexkrechik.cucumberautocomplete**
 
