@@ -76,3 +76,5 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `npx playwright test --reporter=list` |  It will show the test cases are passed/falied at terminal. |
     | `npx playwright test --ui` | Playwright will be opened in UI mode. |
     | `npx playwright codegen` | Playwright Record window will open. |
+    | `npx playwright test --retries 2` | Retry the failed tests |
+    | `npx playwright test tests/todo-page/ tests/landing-page/` | Run multiple tests |
