@@ -33,8 +33,10 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 
 ### Run the playwright test
 -----------
-  1. `npx playwright test`            //Headless Mode
-  2. `npx playwright test --headed`   //Headed Mode
+    | Command | Description |
+    | :--- | :--- |
+  | `npx playwright test`| Headless Mode |
+  | `npx playwright test --headed`| Headed Mode |
 
 ### HTML report
 -------------
@@ -56,14 +58,16 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     * The keyword 'await' before a function makes the function wait for a promise
 
 4) Run the test
-    1) `npx playwright test --project=chromium --headed  example.spec.js`
-    2) `npx playwright test`                             // runs all tests on all browsers in headless mode
-    3) `npx playwright test  example.spec.js`            // runs a specific test file
-    4) `npx playwright test  example.spec.js  MyTest2.spec.js`           // runs the files specified
-    5) `npx playwright test -g "test title"`             // runs test with the title
-    6) `npx playwright test --project=chromium`         // runs on specific browser
-    7) `npx playwright test --headed`                   // runs tests in headed mode
-    8) `npx playwright test --debug`                    // debug tests
-    9) `npx playwright test example.spec.js --debug`           // debug specific test file
-    10) `npx playwright test --reporter=list`           // It will show the test cases are passed/falied at terminal
-    11) `npx playwright test --ui`                      // Playwright will be opened in UI mode
+    | Command | Description |
+    | :--- | :--- |
+    | `npx playwright test --project=chromium --headed  example.spec.js` | Runs the file on specific browser |
+    | `npx playwright test` | Runs all tests on all browsers in headless mode. |
+    | `npx playwright test  example.spec.js` | Runs a specific test file. |
+    | `npx playwright test  example.spec.js  MyTest2.spec.js`| Runs the files specified. |
+    | `npx playwright test -g "test title"` | Runs test with the title. |
+    | `npx playwright test --project=chromium` | Runs on specific browser. |
+    | `npx playwright test --headed`| Runs tests in headed mode. |
+    | `npx playwright test --debug`| Run tests in debug mode. |
+    | `npx playwright test example.spec.js --debug` | Debug specific test file. |
+    | `npx playwright test --reporter=list` |  It will show the test cases are passed/falied at terminal. |
+    | `npx playwright test --ui` | Playwright will be opened in UI mode. |
