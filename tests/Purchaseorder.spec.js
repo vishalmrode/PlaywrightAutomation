@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify the login and order placement', async ({ page }) => {
+test('Verify the login and order placement from demo site', async ({ page }) => {
   await page.goto('https://demoblaze.com/');
   await page.getByRole('link', { name: 'Log in' }).click();
   await page.locator('#loginusername').click();

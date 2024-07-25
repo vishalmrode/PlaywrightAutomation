@@ -66,4 +66,4 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     8) `npx playwright test --debug`                    // debug tests
     9) `npx playwright test example.spec.js --debug`           // debug specific test file
     10) `npx playwright test --reporter=list`           // It will show the test cases are passed/falied at terminal
-    11) `npx playwright test --ui`                    // Playwright will be opened in UI mode
+    11) `npx playwright test --ui`                      // Playwright will be opened in UI mode
