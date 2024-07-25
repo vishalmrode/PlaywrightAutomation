@@ -32,11 +32,11 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
       + __Extension ID :__ **alexkrechik.cucumberautocomplete**
 
 ### Run the playwright test
------------
-  | Command | Description |
-  | :--- | :--- |
-  | `npx playwright test`| Headless Mode |
-  | `npx playwright test --headed`| Headed Mode |
+--
+    | Command | Description |
+    | :--- | :--- |
+    | `npx playwright test`| Headless Mode |
+    | `npx playwright test --headed`| Headed Mode |
 
 ### HTML report
 -------------
@@ -54,10 +54,12 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     * Playwright Test provides a test function to declare tests and expect function to write assertions.
 
 3) Create a test block - test(title, testFunction)
+
     + The keyword 'async' before a function makes the function return a promise
     * The keyword 'await' before a function makes the function wait for a promise
 
 4) Run the test
+
     | Command | Description |
     | :--- | :--- |
     | `npx playwright test --project=chromium --headed  example.spec.js` | Runs the file on specific browser |
@@ -71,3 +73,4 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `npx playwright test example.spec.js --debug` | Debug specific test file. |
     | `npx playwright test --reporter=list` |  It will show the test cases are passed/falied at terminal. |
     | `npx playwright test --ui` | Playwright will be opened in UI mode. |
+    | `npx playwright codegen` | Playwright Record window will open. |
