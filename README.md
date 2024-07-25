@@ -12,11 +12,11 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 [!TIP]
 [Quickstart for writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github).
 
-1) <span style="color: blue;"> Nodejs </span>
-2) <span style="color: blue;"> VS Code Editor </span> 
-3) <span style="color: blue;"> Create project folder  and  open it in VSCode </span> 
+1) Nodejs
+2) VS Code Editor 
+3) Create project folder  and  open it in VSCode 
 
-4) <span style="color: blue;">Install playwright  using terminal</span> 
+4) Install playwright  using terminal 
       + `npm init playwright@latest`
 
   1. package.json           ---  node project management file
