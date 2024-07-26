@@ -1,5 +1,9 @@
 # Playwright Automation
 
+[!IMPORTANT]
+Official Website: [PlayWright](https://playwright.dev/docs/intro).
+-----------------  
+
 ![image](https://miro.medium.com/v2/resize:fit:640/format:webp/1*qsVbAwEINjfgaGe2SuK3oQ.png)
 # Playwright Architecture
 
@@ -11,10 +15,6 @@
   +  The test execution begins on the same connection.
   +  All the test cases can use the same connection for their execution.
   +  Once the execution is completed, the connection is disbanded. 
-
-[!IMPORTANT]
-Official Website: [PlayWright](https://playwright.dev/docs/intro).
------------------  
 
 -----------------------------------------------------------------------------------------
 ## Playwright Installation
