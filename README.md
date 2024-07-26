@@ -1,6 +1,16 @@
 # Playwright Automation
 
 ![image](https://miro.medium.com/v2/resize:fit:640/format:webp/1*qsVbAwEINjfgaGe2SuK3oQ.png)
+# Playwright Architecture
+
+![image](https://cdn.prod.website-files.com/667144f11deb101986897c08/667144f11deb101986897e09_RH5oUf3qmBUEID5wf4txTFLVmgyBHt3UTZ7R6S4NsBREIjZDxr1in7_xIm-asTtCfBJ8v4x8pqJBx2VUoSeQl_rDT1RPE7gp_0LrwYnV7Gp-JFEocSC2c_uRwOuVYK7MFl5uoyI_Vaf5ZDie36A53zM.png)
+
+  +  A WebSocket connection request is sent from the client to the server.
+  +  If the configurational parameters are correct, the connection is accepted.
+  +  The server acknowledges the connection establishment to the client.
+  +  The test execution begins on the same connection.
+  +  All the test cases can use the same connection for their execution.
+  +  Once the execution is completed, the connection is disbanded. 
 
 [!IMPORTANT]
 Official Website: [PlayWright](https://playwright.dev/docs/intro).
