@@ -90,6 +90,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `npx playwright test tests/todo-page/ tests/landing-page/` | Run multiple tests |
 
 5) Built In Locators
+
     These are the recommended built in locators: [Built In](https://playwright.dev/docs/locators).
 
     | Locator | Description |
