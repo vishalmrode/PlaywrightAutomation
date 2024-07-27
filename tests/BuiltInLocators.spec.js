@@ -15,4 +15,7 @@ test("Build in Locators", async ({ page }) => {
 
   const logo = await page.getByAltText("company-branding");
   await expect(logo).toBeVisible();
+
+  const userName = await page.getByPlaceholder("Username");
+  await expect(userName).toBeVisible();
 });
