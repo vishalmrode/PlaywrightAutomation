@@ -92,7 +92,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 
 ## Built In Locators
 
-  [These are the recommended built in locators.] (https://playwright.dev/docs/locators).
+  These are the recommended built in locators: [Built In](https://playwright.dev/docs/locators).
 
 | Locator | Description |
 | :--- | :--- |
