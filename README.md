@@ -88,3 +88,18 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `npx playwright codegen` | Playwright Record window will open. |
     | `npx playwright test --retries 2` | Retry the failed tests |
     | `npx playwright test tests/todo-page/ tests/landing-page/` | Run multiple tests |
+
+
+## Built In Locators
+
+  These are the recommended built in locators. [https://playwright.dev/docs/locators].
+
+| Locator | Description |
+| :--- | :--- |
+| `page.getByRole() ` | To locate by explicit and implicit accessibility attributes. |
+| `page.getByText()` | To locate by text content. |
+| `page.getByLabel()` | to locate a form control by associated label's text. |
+| `page.getByPlaceholder()` | To locate an input by placeholder. |
+| `page.getByAltText()` | To locate an element, usually image, by its text alternative. |
+| `page.getByTitle()`| To locate an element by its title attribute. |
+| `page.getByTestId()`| To locate an element based on its data-testid attribute (other attributes can be configured). |
