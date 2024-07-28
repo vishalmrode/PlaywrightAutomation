@@ -28,7 +28,8 @@ test("Build in Locators", async ({ page }) => {
 
 // page.getByText() to locate by text content.
 
-await expect (await page.getByText('manda user')).toBeVisible();
+const name = await page.locator("//p[@class='oxd-userdropdown-name']").textContent(); // Used xpath of locator
+await expect (await page.getByText(name)).toBeVisible();
 
 
 });
