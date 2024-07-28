@@ -12,10 +12,17 @@ test("Build in Locators", async ({ page }) => {
   await page.goto(
     "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
   );
+  // page.getByAltText() to locate an element, usually image, by its text alternative.
 
   const logo = await page.getByAltText("company-branding");
   await expect(logo).toBeVisible();
 
-  const userName = await page.getByPlaceholder("Username");
-  await expect(userName).toBeVisible();
+  // page.getByPlaceholder() to locate an input by placeholder.
+
+  const userName = await page.getByPlaceholder("Username").fill("Admin");
+  const password = await page.getByPlaceholder("Password").fill("admin123");
+
+  // page.getByRole() to locate by explicit and implicit accessibility attributes.
+
+  await page.getByRole("button", { type: "submit" }).click();
 });
