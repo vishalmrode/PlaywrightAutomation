@@ -102,3 +102,16 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `page.getByAltText()` | To locate an element, usually image, by its text alternative. |
     | `page.getByTitle()`| To locate an element by its title attribute. |
     | `page.getByTestId()`| To locate an element based on its data-testid attribute (other attributes can be configured). |
+
+6) Test Generator
+
+    Some of the commands are as below: [Record Tests](https://playwright.dev/docs/codegen).
+    
+    | Command | Description |
+    | :--- | :--- |
+    | `npx playwright codegen -b chromium ` | Runs the file on specific browser. |
+    | `npx playwright codegen -o tests/filename.spec.js` | This will create the file with given name and the code will added to it. |
+    | `npx playwright codegen -o tests/filename.spec.js --target javascript` | Specify the language in which the code should be generated. |
+
+
+
