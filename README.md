@@ -113,5 +113,23 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     | `npx playwright codegen -o tests/filename.spec.js` | This will create the file with given name and the code will added to it. |
     | `npx playwright codegen -o tests/filename.spec.js --target javascript` | Specify the language in which the code should be generated. |
 
+7) Assertions
+
+    Playwright includes test assertions in the form of expect function. Some of the commonly used are mentioned below.
+    Reference: [Assertions](https://playwright.dev/docs/test-assertions).
+
+    | Command | Description |
+    | :--- | :--- |
+    | `expect(page).toHaveURL()` | Page has URL. |
+    | `expect(page).toHaveTitle()` |   Page has title. |
+    | `expect(locator).toBeVisible()` |  Element is visible. |
+    | `expect(locator).toBeEnabled()` | Control is enabled. |
+    | `expect(locator).toBeChecked()` | Radio/Checkbox is checked. |
+    | `expect(locator).toHaveAttribute()`| Element has attribute. |
+    | `expect(locator).toHaveText()` |  Element matches text. |
+    | `expect(locator).toContainText()`| Element contains text. |
+    | `expect(locator).toHaveValue(value)`| Input has a value. |
+    | `expect(locator).toHaveCount()` | List of elements has given length. |
+
 
 
