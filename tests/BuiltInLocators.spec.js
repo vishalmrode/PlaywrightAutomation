@@ -25,4 +25,10 @@ test("Build in Locators", async ({ page }) => {
   // page.getByRole() to locate by explicit and implicit accessibility attributes.
 
   await page.getByRole("button", { type: "submit" }).click();
+
+// page.getByText() to locate by text content.
+
+await expect (await page.getByText('manda user')).toBeVisible();
+
+
 });
