@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 
+// You can add after assertions for negative test cases
+
 test("Assertions test", async ({ page }) => {
   // open URL
 
@@ -27,7 +29,29 @@ test("Assertions test", async ({ page }) => {
   await expect(maleGender).toBeChecked();
 
   // Check box
-   const newsLettercheckbox=await page.locator('#Newsletter');
-   await expect(newsLettercheckbox).toBeChecked();
+  const newsLettercheckbox = await page.locator("#Newsletter");
+  await expect(newsLettercheckbox).toBeChecked();
 
+  // expect(locator).toHaveAttribute()
+  const regButton = await page.locator("#register-button");
+  await expect(regButton).toHaveAttribute("type", "submit");
+
+  //expect(locator).toHaveText()
+  await expect(await page.locator("div[class='page-title'] h1")).toHaveText(
+    "Register"
+  );
+
+  //expect(locator).toContainText()
+  await expect(await page.locator("div[class='page-title'] h1")).toContainText(
+    "Reg"
+  );
+
+  //expect(locator).toHaveValue(value)
+  const emailInput = await page.locator("#Email");
+  await emailInput.fill("test@test.com");
+  await expect(emailInput).toHaveValue("test@test.com");
+
+  //expect(locator).toHaveCount()
+  const birthDay = await page.locator("select[name='DateOfBirthDay'] option");
+  await expect(birthDay).toHaveCount(32);
 });
