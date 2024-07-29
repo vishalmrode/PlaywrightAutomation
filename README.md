@@ -46,7 +46,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 ### Run the playwright test
 -----------
   | Command | Description |
-  | :--- | :--- |
+  | :---: | :---: |
   | `npx playwright test`| Headless Mode |
   | `npx playwright test --headed`| Headed Mode |
 
@@ -73,7 +73,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
 4) Run the test
 
     | Command | Description |
-    | :--- | :--- |
+    | :---: | :---: |
     | `npx playwright test --project=chromium --headed  example.spec.js` | Runs the file on specific browser |
     | `npx playwright test` | Runs all tests on all browsers in headless mode. |
     | `npx playwright test  example.spec.js` | Runs a specific test file. |
@@ -94,7 +94,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     These are the recommended built in locators: [Built In](https://playwright.dev/docs/locators).
 
     | Locator | Description |
-    | :--- | :--- |
+    | :---: | :---: |
     | `page.getByRole() ` | To locate by explicit and implicit accessibility attributes. |
     | `page.getByText()` | To locate by text content. |
     | `page.getByLabel()` | to locate a form control by associated label's text. |
@@ -108,7 +108,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     Some of the commands are as below: [Record Tests](https://playwright.dev/docs/codegen).
     
     | Command | Description |
-    | :--- | :--- |
+    | :---: | :---: |
     | `npx playwright codegen -b chromium ` | Runs the file on specific browser. |
     | `npx playwright codegen -o tests/filename.spec.js` | This will create the file with given name and the code will added to it. |
     | `npx playwright codegen -o tests/filename.spec.js --target javascript` | Specify the language in which the code should be generated. |
@@ -119,7 +119,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
     Reference: [Assertions](https://playwright.dev/docs/test-assertions).
 
     | Command | Description |
-    | :--- | :--- |
+    | :---: | :---: |
     | `expect(page).toHaveURL()` | Page has URL. |
     | `expect(page).toHaveTitle()` |   Page has title. |
     | `expect(locator).toBeVisible()` |  Element is visible. |
