@@ -19,3 +19,38 @@ test('check presence of value in the dropdown',async({page})=>{
     await expect(content.includes('China')).toBeTruthy();
 });
 
+// Looping statement can be useful if the dropdown is dynamic,bootsrap or autosuggested. 
+
+test('check presence of value in the dropdown using looping',async({page})=>{
+    await page.goto("https://testautomationpractice.blogspot.com/");
+    const options = await page.$$('#country option');
+    let status = false;
+    for(const option of options)
+    {
+        //console.log(await option.textContent());
+        let value =await option.textContent();
+        if(value.includes('France'))
+        {
+            status=true;
+            break;
+        }
+    }
+    expect(status).toBeTruthy();
+});
+
+test('Select option from dropdown using looping',async({page})=>{
+    await page.goto("https://testautomationpractice.blogspot.com/");
+    const options = await page.$$('#country option');
+    let status = false;
+    for(const option of options)
+    {
+        //console.log(await option.textContent());
+        let value =await option.textContent();
+        if(value.includes('France'))
+        {
+            await page.selectOption("#country",value);
+            break;
+        }
+    }
+    await page.waitForTimeout(5000);
+});
