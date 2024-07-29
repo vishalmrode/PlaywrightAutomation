@@ -8,7 +8,7 @@ test('Handle Checkboxes',async({page})=>{
     await page.locator("//span[contains(text(),'Notes')]").check();
     
     await expect(await page.locator("//span[contains(text(),'Notes')]").isChecked()).toBeTruthy();
-
+    await expect(await page.locator("//span[contains(text(),'WorkSpace')]").isChecked()).toBeFalsy();
     await page.waitForTimeout(1000);
 
 }
