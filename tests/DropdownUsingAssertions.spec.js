@@ -8,7 +8,7 @@ test('Check Number of options in dropdown',async({page})=>{
 
 test('Check Number of options in dropdown with different method',async({page})=>{
     await page.goto("https://testautomationpractice.blogspot.com/");
-    // $$ used for capturing array of all data
+    // For capturing array of all data $$ is used.// 
     const options = await page.$$('#country option');     
     console.log("Number of options:", options.length)
     await expect(options.length).toBe(10);
