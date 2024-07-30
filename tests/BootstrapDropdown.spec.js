@@ -30,11 +30,36 @@ test('Select multiple options from Bootstrap dropdown',async({page})=>{
     // click on the dropdown
     await page.locator('.multiselect').click();
     //Use for Loop
-    const options=await page.$$('ul>li label');
-    for (let option of options)
+    const options=await page.$$('ul>li label')
+    for(let option of options)
+    {
+        const value=await option.textContent();
+        //console.log("value is",value)
+        if(value.includes('Angular') || value.includes('Java'))
         {
-            const value=await option.textContent();
-            console.log("values are:",value);
+            await option.click()
         }
+
+    }
+    await page.waitForTimeout(5000);
+})
+
+test('UnSelect multiple options from Bootstrap dropdown',async({page})=>{
+
+    await page.goto('https://www.jquery-az.com/boots/demo.php?ex=63.0_2');
+    // click on the dropdown
+    await page.locator('.multiselect').click();
+    //Use for Loop
+    const options=await page.$$('ul>li label')
+    for(let option of options)
+    {
+        const value=await option.textContent();
+        //console.log("value is",value)
+        if(value.includes('HTML') || value.includes('CSS'))
+        {
+            await option.click()
+        }
+
+    }
     await page.waitForTimeout(5000);
 })
