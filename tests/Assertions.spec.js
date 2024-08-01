@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-// You can add after assertions for negative test cases
+// You can add not after assertions for negative test cases
 
 test("Assertions test", async ({ page }) => {
   // open URL
