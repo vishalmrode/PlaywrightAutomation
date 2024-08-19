@@ -17,7 +17,7 @@ test("Handle Pages/Windows", async () => {
 
   await page2.goto("https://www.orangehrm.com/");
   await expect(page2).toHaveTitle(
-    "OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM"
+    "Human Resources Management Software | OrangeHRM"
   );
 });
 
@@ -37,7 +37,7 @@ test.only("Handle Multiple Pages/Windows", async () => {
 
   const newPage = await pagePromise;
   await expect(newPage).toHaveTitle(
-    "OrangeHRM HR Software | Free & Open Source HR Software | HRMS | HRIS | OrangeHRM"
+    "Human Resources Management Software | OrangeHRM"
   );
 
   await page1.waitForTimeout(3000);
