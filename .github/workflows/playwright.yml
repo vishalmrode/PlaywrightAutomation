@@ -57,16 +57,13 @@ jobs:
             echo "Directory allure-report not found or empty."
           fi
 
-      # Upload Allure report as artifact only if directory exists
+      # Upload Allure report as artifact only if directory exists and contains files
       - name: Upload Allure report as artifact
-        run: |
-          if [ -d allure-report ]; then
-            echo "Uploading allure-report as artifact"
-            tar -czf allure-report.tar.gz -C allure-report .
-            curl -X POST --url https://uploads.github.com/repos/${{ github.repository }}/actions/artifacts/${{ github.run_id }}/allure-report --data-binary @allure-report.tar.gz
-          else
-            echo "allure-report directory not found. Skipping upload."
-          fi
+        if: success() && steps.generate-allure.outputs.artifact_created == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-report/
 
       # Display the link to the generated Allure report
       - name: Display Allure report link
