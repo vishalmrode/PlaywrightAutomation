@@ -28,6 +28,10 @@ jobs:
       - name: Generate Allure report
         run: allure generate allure-results --clean -o allure-report
 
+        # Verify the generated directory before uploading
+      - name: List the contents of the directory
+        run: ls -R allure-report
+
       - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v3
         with:
