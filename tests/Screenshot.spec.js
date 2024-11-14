@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.only("page screenshot", async ({ page }) => {
+test("page screenshot", async ({ page }) => {
   await page.goto("https://demo.opencart.com/");
   await page.screenshot({
     path: "tests/screenshots/" + "HomePage.png" + Date.now(),
