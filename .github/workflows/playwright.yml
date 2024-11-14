@@ -29,24 +29,46 @@ jobs:
       - name: Run Playwright tests with Allure reporter
         run: npx playwright test Hooks1.spec.js --reporter=allure-playwright
 
+      # Check if allure-results directory is populated with results
+      - name: List contents of allure-results directory (debug)
+        run: |
+          if [ -d allure-results ]; then
+            echo "allure-results directory exists and contains files:"
+            ls -R allure-results
+          else
+            echo "Directory allure-results not found or empty."
+          fi
+
+      # Install Allure CLI
       - name: Install Allure CLI
         run: npm install -g allure-commandline
 
-      - name: List contents of allure-results directory (debug)
-        run: ls -R allure-results || echo "Directory allure-results not found"
-
+      # Generate Allure report from allure-results
       - name: Generate Allure report
         run: allure generate allure-results --clean -o allure-report
 
+      # List contents of allure-report directory (debug)
       - name: List contents of allure-report directory (debug)
-        run: ls -R allure-report || echo "Directory allure-report not found"
+        run: |
+          if [ -d allure-report ]; then
+            echo "allure-report directory exists and contains files:"
+            ls -R allure-report
+          else
+            echo "Directory allure-report not found or empty."
+          fi
 
+      # Upload Allure report as artifact only if directory exists
       - name: Upload Allure report as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-report
-          path: allure-report/
+        run: |
+          if [ -d allure-report ]; then
+            echo "Uploading allure-report as artifact"
+            tar -czf allure-report.tar.gz -C allure-report .
+            curl -X POST --url https://uploads.github.com/repos/${{ github.repository }}/actions/artifacts/${{ github.run_id }}/allure-report --data-binary @allure-report.tar.gz
+          else
+            echo "allure-report directory not found. Skipping upload."
+          fi
 
+      # Display the link to the generated Allure report
       - name: Display Allure report link
         run: |
           echo "Allure report is available at: https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}"
