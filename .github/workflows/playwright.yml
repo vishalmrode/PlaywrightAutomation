@@ -35,8 +35,8 @@ jobs:
       - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v3
         with:
-          name: allure-report
-          path: allure-report
+          name: allure-results
+          path: allure-results
 
       - name: Display Allure report link
         run: |
