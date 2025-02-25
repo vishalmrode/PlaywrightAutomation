@@ -27,7 +27,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests with Allure reporter
-        run: npx playwright test Hooks1.spec.js --reporter=allure-playwright
+        run: npx playwright test UIBasics.spec.js --reporter=allure-playwright
 
       # List contents of allure-results to verify if results were generated
       - name: List contents of allure-results directory (debug)
