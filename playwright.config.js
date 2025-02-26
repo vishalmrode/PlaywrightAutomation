@@ -33,7 +33,7 @@ module.exports = defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    browserName: "webkit",
+    browserName: "chromium",
     headless: true, // You can make it true or false on the basis of execution to be UI mode or headless by changing the value
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
@@ -59,7 +59,7 @@ module.exports = defineConfig({
   //     use: { ...devices["Desktop Safari"] },
   //   },
 
-  //   /* Test against mobile viewports. */
+  //   /* Test against mobile viewport. */
   //   // {
   //   //   name: 'Mobile Chrome',
   //   //   use: { ...devices['Pixel 5'] },
