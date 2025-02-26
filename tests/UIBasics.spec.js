@@ -1,12 +1,12 @@
 const { test, expect } = require("@playwright/test");
 
-test.only("Browser context First Test case", async ({ browser }) => {
+test("Browser context First Test case", async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
   const userName = page.locator("#username");
   const signIn = page.locator("#signInBtn");
   const password = page.locator("[type='password']");
-
-  const context = await browser.newContext();
-  const page = await context.newPage();
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 
@@ -23,4 +23,7 @@ test.only("Browser context First Test case", async ({ browser }) => {
   await userName.fill("");
   await userName.fill("rahulshettyacademy");
   await signIn.click();
+  //await page.waitForTimeout(2000);
+  console.log(await page.locator(".card-body a").first().textContent());
+  console.log(await page.locator(".card-body a").nth(1).textContent()); // get the value by index
 });
