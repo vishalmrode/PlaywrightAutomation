@@ -42,10 +42,14 @@ test.only("Login to the page", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
+  const userEmail = page.locator("#userEmail");
+  const password = page.locator("#userPassword");
+  const registerButton = page.locator("#login");
+
   //   const loginEmail = page.locator("#userEmail");
   //   const userPassword = page.locator("#userPassword");
 
-  await page.goto("https://rahulshettyacademy.com/client/auth/login");
+  await page.goto("https://rahulshettyacademy.com/client");
 
   console.log("The Title of page is:", await page.title());
   await expect(page).toHaveTitle("Let's Shop");
@@ -53,4 +57,5 @@ test.only("Login to the page", async ({ browser }) => {
   await userEmail.fill("test43rrp@gmail.com");
   await password.fill("Test@000!");
   await registerButton.click();
+  await page.waitForTimeout(3000);
 });
