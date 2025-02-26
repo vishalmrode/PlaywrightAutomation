@@ -45,6 +45,7 @@ test.only("Login to the page", async ({ browser }) => {
   const userEmail = page.locator("#userEmail");
   const password = page.locator("#userPassword");
   const registerButton = page.locator("#login");
+  const cardTitles = page.locator(".card-body h5");
 
   //   const loginEmail = page.locator("#userEmail");
   //   const userPassword = page.locator("#userPassword");
@@ -57,5 +58,10 @@ test.only("Login to the page", async ({ browser }) => {
   await userEmail.fill("test43rrp@gmail.com");
   await password.fill("Test@000!");
   await registerButton.click();
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(4000);
+
+  console.log(
+    "The first card title is:",
+    await cardTitles.first().textContent()
+  );
 });
