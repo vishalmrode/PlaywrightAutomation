@@ -4,9 +4,11 @@ test("Browser context First Test case", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
+  // Decalring as variables for repeatative locator use
   const userName = page.locator("#username");
   const signIn = page.locator("#signInBtn");
   const password = page.locator("[type='password']");
+  const cardTitles = page.locator(".card-body a");
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 
@@ -24,6 +26,9 @@ test("Browser context First Test case", async ({ browser }) => {
   await userName.fill("rahulshettyacademy");
   await signIn.click();
   //await page.waitForTimeout(2000);
-  console.log(await page.locator(".card-body a").first().textContent());
-  console.log(await page.locator(".card-body a").nth(1).textContent()); // get the value by index
+  console.log(await cardTitles.first().textContent());
+  console.log(await cardTitles.nth(1).textContent()); // get the value by index
+
+  const allTitles = await cardTitles.allTextContents();
+  console.log(allTitles);
 });
