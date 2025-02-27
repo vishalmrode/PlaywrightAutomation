@@ -62,4 +62,6 @@ test.only("Login to the page", async ({ browser }) => {
     "The first card title is:",
     await cardTitles.first().textContent()
   );
+  const allTitles = await cardTitles.allTextContents();
+  console.log("All Card titles are:", allTitles);
 });
