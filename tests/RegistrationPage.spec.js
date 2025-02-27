@@ -22,8 +22,8 @@ test("Registration Page Signup", async ({ browser }) => {
   console.log("The Title of page is:", await page.title());
   await expect(page).toHaveTitle("Let's Shop");
 
+  //Register User
   await firstName.fill("ABCDEFGHIJ");
-  //await page.waitForTimeout(4000);
   await lastName.fill("testing");
   await userEmail.fill("test43rrp@gmail.com");
   await UserMobile.fill("4444444455");
@@ -47,9 +47,6 @@ test.only("Login to the page", async ({ browser }) => {
   const registerButton = page.locator("#login");
   const cardTitles = page.locator(".card-body h5");
 
-  //   const loginEmail = page.locator("#userEmail");
-  //   const userPassword = page.locator("#userPassword");
-
   await page.goto("https://rahulshettyacademy.com/client");
 
   console.log("The Title of page is:", await page.title());
@@ -60,6 +57,7 @@ test.only("Login to the page", async ({ browser }) => {
   await registerButton.click();
   await page.waitForTimeout(4000);
 
+  //get title of the first card
   console.log(
     "The first card title is:",
     await cardTitles.first().textContent()
