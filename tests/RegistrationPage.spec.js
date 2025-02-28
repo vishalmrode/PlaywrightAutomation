@@ -58,6 +58,13 @@ test.only("Login to the page", async ({ browser }) => {
   await page.waitForTimeout(4000);
 
   //get title of the first card
+
+  // The below two can also be used for getting the cards using the networkidle assertion
+
+  //await page.waitForLoadState("networkidle");
+
+  //await cardTitles.first().waitFor();
+
   console.log(
     "The first card title is:",
     await cardTitles.first().textContent()
