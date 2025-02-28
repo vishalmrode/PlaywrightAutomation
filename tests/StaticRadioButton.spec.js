@@ -24,8 +24,21 @@ test.only("Radio buttons selection", async ({ page }) => {
   await userName.fill("rahulshettyacademy");
   await password.fill("learning");
   await page.locator(".radiotextsty").last().click();
-  await page.locator(".btn.btn-success").click();
+
+  //Select the radio button
+  console.log(
+    "The Radio button is checked?",
+    await page.locator(".radiotextsty").last().isChecked()
+  );
+  await expect(page.locator(".radiotextsty").last()).toBeChecked(); // if the radio button is checked
+
+  await page.locator("#okayBtn").click();
   await dropDown.selectOption("consult");
   await page.waitForTimeout(3000);
+
+  // Check the terms agreement
+  await page.locator("#terms").click();
+  await expect(page.locator("#terms").isChecked).toBeTruthy();
+  //click on signin
   await signIn.click();
 });
