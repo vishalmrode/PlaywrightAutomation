@@ -20,6 +20,7 @@ test.only("Radio buttons selection", async ({ page }) => {
   const signIn = page.locator("#signInBtn");
   const password = page.locator("[type='password']");
   const dropDown = page.locator("select.form-control ");
+  const documentLink = page.locator("[href*='documents-request']");
 
   await userName.fill("rahulshettyacademy");
   await password.fill("learning");
@@ -42,4 +43,6 @@ test.only("Radio buttons selection", async ({ page }) => {
   expect(await page.locator("#terms").isChecked()).toBeTruthy(); // await should be placed wherever the action is performed.that is the reason it's placed inside the brackets.
   //click on signin
   await signIn.click();
+
+  await expect(documentLink).toHaveAttribute("class", "blinkingText");
 });
