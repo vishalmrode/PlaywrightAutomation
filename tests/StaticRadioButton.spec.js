@@ -38,7 +38,7 @@ test.only("Radio buttons selection", async ({ page }) => {
 
   // Check the terms agreement
   await page.locator("#terms").click();
-  await expect(page.locator("#terms").isChecked).toBeTruthy();
+  await expect(page.locator("#terms").isChecked()).toBeTruthy();
   //click on signin
   await signIn.click();
 });
