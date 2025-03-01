@@ -10,10 +10,18 @@ test.only("Child window automation", async ({ browser }) => {
   await expect(documentLink).toHaveAttribute("class", "blinkingText");
 
   const [newPage] = await Promise.all([
+    // we can also use newPage2,newPage3 for other child windows to automate
     context.waitForEvent("page"), // listen to any new page  States of promise: Pending,Fulfilled,rejected
     documentLink.click(),
   ]);
 
   const textNewPage = await newPage.locator(".im-para.red").textContent();
   console.log(textNewPage);
+
+  const arrayText = textNewPage.split("@");
+  const domain = arrayText[1].split(".")[0];
+  console.log(domain);
+  await page.locator("#username").fill(domain);
+  await page.pause();
+  console.log(await page.locator("#username").textContent());
 });
