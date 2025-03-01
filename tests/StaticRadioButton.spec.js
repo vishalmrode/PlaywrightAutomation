@@ -31,6 +31,7 @@ test.only("Radio buttons selection", async ({ page }) => {
     await page.locator(".radiotextsty").last().isChecked()
   );
   await expect(page.locator(".radiotextsty").last()).toBeChecked(); // if the radio button is checked
+  // await should be placed wherever the action is performed.that is the reason it's placed outside the brackets.
 
   await page.locator("#okayBtn").click();
   await dropDown.selectOption("consult");
@@ -38,7 +39,7 @@ test.only("Radio buttons selection", async ({ page }) => {
 
   // Check the terms agreement
   await page.locator("#terms").click();
-  await expect(page.locator("#terms").isChecked()).toBeTruthy();
+  expect(await page.locator("#terms").isChecked()).toBeTruthy(); // await should be placed wherever the action is performed.that is the reason it's placed inside the brackets.
   //click on signin
   await signIn.click();
 });
