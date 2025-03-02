@@ -37,7 +37,9 @@ module.exports = defineConfig({
     headless: true, // You can make it true or false on the basis of execution to be UI mode or headless by changing the value
     screenshot: "on",
     trace: "on",
+    //trace: 'retain-on-failure'
     //trace: "on-first-retry",
+    // Check the traces on https://trace.playwright.dev/ in detail by uploading the zip file present in test results folder
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
