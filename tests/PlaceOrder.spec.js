@@ -23,5 +23,14 @@ test("@Web Client App login", async ({ page }) => {
       break; // Exit the loop once the product is added
     }
   }
-  await page.pause();
+  // Go to Cart page
+  await page.locator("[routerlink*='cart']").click();
+  // wait until the page is fully displayed
+  await page.locator("div li").first().waitFor();
+  //Verify the item name,which is added in cart
+  const itemPresent = await page
+    .locator("h3:has-text('ADIDAS ORIGINAL')")
+    .isVisible();
+  expect(itemPresent).toBeTruthy();
+  console.log("The added items is present:", itemPresent);
 });
