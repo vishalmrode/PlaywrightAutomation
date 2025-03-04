@@ -16,7 +16,9 @@ test("@Web Client App login", async ({ page }) => {
   const count = await products.count();
   for (let i = 0; i < count; ++i) {
     if ((await products.nth(i).locator("b").textContent()) === productName) {
-      console.log(`Found product: ${productName}`);
+      console.log(
+        `Name of the desired product found from all the products is: ${productName}`
+      );
 
       // add item to cart
       await products.nth(i).locator("text= Add To Cart").click();
@@ -32,5 +34,5 @@ test("@Web Client App login", async ({ page }) => {
     .locator("h3:has-text('ADIDAS ORIGINAL')")
     .isVisible();
   expect(itemPresent).toBeTruthy();
-  console.log("The added items is present:", itemPresent);
+  console.log("The added items are present in cart:", itemPresent);
 });
