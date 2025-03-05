@@ -35,4 +35,24 @@ test("@Web Client App login", async ({ page }) => {
     .isVisible();
   expect(itemPresent).toBeTruthy();
   console.log("The added items are present in cart:", itemPresent);
+
+  // Checkout the item
+  await page.locator("text=Checkout").click();
+
+  //you should use locator.fill() instead. You only need to press keys one by one if there is special keyboard handling on the page.
+  await page.locator("[placeholder*='Country']").pressSequentially("ind");
+  const dynamicDropdown = page.locator(
+    ".ta-results.list-group.ng-star-inserted"
+  );
+  await dynamicDropdown.waitFor();
+  const optionsCount = dynamicDropdown.locator("button").count();
+  for (let i = 0; i < optionsCount; ++i) {
+    const text = await dynamicDropdown.locator("button").nth(i).textContent();
+    if (text === " India") {
+      // click the option
+      await dynamicDropdown.locator("button").nth(i).click();
+      break;
+    }
+  }
+  await page.pause();
 });
