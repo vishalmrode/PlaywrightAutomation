@@ -10,7 +10,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
     "@faker-js/faker": "^9.6.0",
-    "@playwright/test": "^1.50.1",
+    "@playwright/test": "^1.51.0",
     "@types/node": "^20.14.11",
     "allure-playwright": "^3.0.6",
     "playwright-bdd": "^7.0.1",
