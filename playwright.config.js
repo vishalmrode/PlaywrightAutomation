@@ -26,27 +26,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [
-    ["line"],
-    ["html"],
-    ["allure-playwright"],
-    [
-      "playwright-mail-reporter",
-      {
-        host: "smtp.resend.com",
-        port: "465",
-        username: process.env.RESEND_USER_NAME,
-        password: process.env.RESEND_PASSWORD,
-        from: "Vishal Testing <vishaltestlearning@gmail.com>",
-        to: "Vishal <vishalmrode1989@gmail.com>", // Comma separated list of email addresses
-        subject: "E2E Test Results Playwright Reporter",
-        mailOnSuccess: true,
-        linkToResults:
-          "https://github.com/vishalmrode/PlaywrightAutomation/tree/main/allure-report",
-        showError: true,
-      },
-    ],
-  ],
+  reporter: [["line"], ["html"], ["allure-playwright"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     browserName: "chromium",
