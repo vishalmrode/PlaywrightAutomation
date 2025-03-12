@@ -7,7 +7,7 @@ on:
     branches: [main, master]
 
 jobs:
-  test:
+  Playwright_Testing:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
@@ -26,57 +26,36 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests with Allure reporter
+      - name: Run Playwright tests
         run: npx playwright test ChildWindowHandling.spec.js
 
-        # List contents of allure-results to verify if results were generated
-      - name: List contents of allure-results directory (debug)
+      # Install Allure Commandline
+      - name: Install Allure Commandline
         run: |
-          echo "Checking contents of allure-results directory"
-          if [ -d allure-results ]; then
-          echo "allure-results directory exists and contains files:"
-          ls -R allure-results
-          else
-          echo "Directory allure-results not found or empty."
-            fi
+          npm install -g allure-commandline --save-dev
 
-        # Install Allure CLI
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline
-
-        # Generate Allure report from allure-results
+      # Generate Allure report
       - name: Generate Allure report
         run: |
-          echo "Generating Allure report"
           allure generate ./allure-results --clean -o ./allure-report
-          # Check if allure-report directory exists and contains files
-          if [ -d allure-report ] && [ "$(ls -A allure-report)" ]; then
-          echo "Allure report generated successfully!"
-          else
-          echo "Error: allure-report directory not found or empty."
-          exit 1  # Fail the job if allure-report is empty or missing
-          fi
 
-        # List contents of allure-report to verify if report was generated
-      - name: List contents of allure-report directory (debug)
-        run: |
-          echo "Checking contents of allure-report directory"
-          if [ -d allure-report ]; then
-          echo "allure-report directory exists and contains files:"
-          ls -R allure-report
-          else
-          echo "Directory allure-report not found or empty."
-          fi
-
-        # Upload Allure report as artifact
+      # Upload Allure report as an artifact
       - name: Upload Allure report as artifact
-        if: success() # This condition will only run if the previous steps succeed
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: allure-report
-          path: allure-report/
+          path: ./allure-report
 
-        # Display the link to the generated Allure report
-      - name: Display Allure report link
+  # Optionally, serve the report (can be used in GitHub pages or another server)
+  deploy:
+    runs-on: ubuntu-latest
+    needs: Playwright_Testing # Ensures deploy runs after Playwright_Testing job
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Serve Allure report
         run: |
-          echo "Allure report is available at: https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}"
+          npm install -g http-server
+          http-server ./allure-report -p 8000
