@@ -12,7 +12,7 @@
     "@faker-js/faker": "^9.6.0",
     "@playwright/test": "^1.51.0",
     "@types/node": "^20.14.11",
-    "allure-playwright": "^3.0.6",
+    "allure-playwright": "^3.2.0",
     "playwright-bdd": "^7.0.1",
     "typescript": "^5.5.4"
   },

@@ -29,7 +29,7 @@ module.exports = defineConfig({
   reporter: [
     ["line"],
     ["html"],
-    ["allure-playwright", { outputFolder: "allure-results" }],
+    ["allure-playwright"],
     [
       "playwright-mail-reporter",
       {
