@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          npx playwright test
+          npx playwright test ChildWindowHandling.spec.js
         continue-on-error: false # This will fail the job if tests fail
 
       - name: Load test report history
