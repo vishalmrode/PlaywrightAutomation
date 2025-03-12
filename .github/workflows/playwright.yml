@@ -59,16 +59,23 @@ jobs:
           name: allure-report
           path: ./allure-report/ # Ensure the path to the generated report is correct
 
-  # Optionally, serve the report (can be used in GitHub pages or another server)
-  deploy:
+  Allure_Report:
     runs-on: ubuntu-latest
-    needs: Playwright_Testing # Ensures deploy runs after Playwright_Testing job
+    needs: Playwright_Testing # This ensures the deploy job runs after the tests job
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Serve Allure report
+      - name: Install http-server globally
+        run: npm install -g http-server --unsafe-perm
+
+      - name: Download allure-report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: ./allure-report
+
+      - name: Start http-server
         run: |
-          npm install -g http-server
           http-server ./allure-report -p 8000
