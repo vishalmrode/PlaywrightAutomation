@@ -41,10 +41,10 @@ jobs:
 
       # Upload Allure report as an artifact
       - name: Upload Allure report as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: ./allure-report
+          path: ./allure-report/ # Ensure path is correct and directory exists
 
   # Optionally, serve the report (can be used in GitHub pages or another server)
   deploy:
