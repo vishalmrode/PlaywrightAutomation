@@ -34,7 +34,7 @@ module.exports = defineConfig({
       "playwright-mail-reporter",
       {
         host: "smtp.resend.com",
-        port: "2465",
+        port: "465",
         username: process.env.RESEND_USER_NAME,
         password: process.env.RESEND_PASSWORD,
         from: "<vishaltestlearning@gmail.com>",
