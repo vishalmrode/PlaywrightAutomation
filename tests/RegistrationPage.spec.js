@@ -38,7 +38,7 @@ test("Registration Page Signup", async ({ browser }) => {
   await page.waitForTimeout(4000);
 });
 
-test.only("Login to the page", async ({ browser }) => {
+test.("Login to the page", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 

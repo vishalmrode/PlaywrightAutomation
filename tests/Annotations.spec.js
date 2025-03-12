@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 
 // only
-/*test.only('test1', async({page})=>{
+/*test('test1', async({page})=>{
     console.log('this is test1')
 })
 */

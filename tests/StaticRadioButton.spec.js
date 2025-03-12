@@ -13,7 +13,7 @@ test("Handle Radio Buttons", async ({ page }) => {
   await expect(await page.locator("#gender-female").isChecked()).toBeFalsy(); //isChecked() will return value true and toBeFalsy will verify
 });
 
-test.only("Radio buttons selection", async ({ page }) => {
+test("Radio buttons selection", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 
   const userName = page.locator("#username");

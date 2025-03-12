@@ -21,7 +21,7 @@ test("Handle Pages/Windows", async () => {
   );
 });
 
-test.only("Handle Multiple Pages/Windows", async () => {
+test("Handle Multiple Pages/Windows", async () => {
   const browser = await chromium.launch();
   const context = await browser.newContext();
 
