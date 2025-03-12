@@ -29,56 +29,46 @@ jobs:
       - name: Run Playwright tests with Allure reporter
         run: npx playwright test ChildWindowHandling.spec.js --reporter=allure-playwright
 
-      # List contents of allure-results to verify if results were generated
+        # List contents of allure-results to verify if results were generated
       - name: List contents of allure-results directory (debug)
         run: |
           echo "Checking contents of allure-results directory"
           if [ -d allure-results ]; then
-            echo "allure-results directory exists and contains files:"
-            ls -R allure-results
+          echo "allure-results directory exists and contains files:"
+          ls -R allure-results
           else
-            echo "Directory allure-results not found or empty."
-          fi
+          echo "Directory allure-results not found or empty."
+            fi
 
-      # Install Allure CLI
+        # Install Allure CLI
       - name: Install Allure CLI
         run: npm install -g allure-commandline
 
-      # Generate Allure report from allure-results
+        # Generate Allure report from allure-results
       - name: Generate Allure report
         run: |
           echo "Generating Allure report"
           allure generate ./allure-results --clean -o ./allure-report
           # Check if allure-report directory exists and contains files
           if [ -d allure-report ] && [ "$(ls -A allure-report)" ]; then
-            echo "Allure report generated successfully!"
+          echo "Allure report generated successfully!"
           else
-            echo "Error: allure-report directory not found or empty."
-            exit 1  # Fail the job if allure-report is empty or missing
+          echo "Error: allure-report directory not found or empty."
+          exit 1  # Fail the job if allure-report is empty or missing
           fi
 
-      # List contents of allure-report to verify if report was generated
+        # List contents of allure-report to verify if report was generated
       - name: List contents of allure-report directory (debug)
         run: |
           echo "Checking contents of allure-report directory"
           if [ -d allure-report ]; then
-            echo "allure-report directory exists and contains files:"
-            ls -R allure-report
+          echo "allure-report directory exists and contains files:"
+          ls -R allure-report
           else
-            echo "Directory allure-report not found or empty."
+          echo "Directory allure-report not found or empty."
           fi
 
-      # Ensure allure-report directory exists; create it if it doesn't
-      - name: Ensure allure-report directory exists
-        run: |
-          if [ ! -d allure-report ]; then
-            echo "allure-report directory does not exist. Creating it..."
-            mkdir -p allure-report
-          else
-            echo "allure-report directory already exists."
-          fi
-
-      # Upload Allure report as artifact
+        # Upload Allure report as artifact
       - name: Upload Allure report as artifact
         if: success() # This condition will only run if the previous steps succeed
         uses: actions/upload-artifact@v4
@@ -86,13 +76,7 @@ jobs:
           name: allure-report
           path: allure-report/
 
-      # Display the link to the generated Allure report
+        # Display the link to the generated Allure report
       - name: Display Allure report link
         run: |
           echo "Allure report is available at: https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}"
-
-      - name: Run Playwright tests
-        env:
-          RESEND_USER_NAME: ${{ secrets.RESEND_USER_NAME }}
-          RESEND_PASSWORD: ${{ secrets.RESEND_PASSWORD }}
-        run: npx playwright test ChildWindowHandling.spec.js --reporter=playwright-mail-reporter
