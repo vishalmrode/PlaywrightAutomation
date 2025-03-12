@@ -37,8 +37,8 @@ module.exports = defineConfig({
         port: "465",
         username: process.env.RESEND_USER_NAME,
         password: process.env.RESEND_PASSWORD,
-        from: "<vishaltestlearning@gmail.com>",
-        to: "vishalmrode1989@gmail.com", // Comma separated list of email addresses
+        from: "Vishal Testing <vishaltestlearning@gmail.com>",
+        to: "Vishal <vishalmrode1989@gmail.com>", // Comma separated list of email addresses
         subject: "E2E Test Results Playwright Reporter",
         mailOnSuccess: true,
         linkToResults:
