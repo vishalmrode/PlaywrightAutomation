@@ -30,6 +30,22 @@ module.exports = defineConfig({
     ["line"],
     ["html"],
     ["allure-playwright", { outputFolder: "allure-results" }],
+    [
+      "playwright-mail-reporter",
+      {
+        host: "smtp.resend.com",
+        port: "2465",
+        username: process.env.RESEND_USER_NAME,
+        password: process.env.RESEND_PASSWORD,
+        from: "<vishaltestlearning@gmail.com>",
+        to: "vishalmrode1989@gmail.com", // Comma separated list of email addresses
+        subject: "E2E Test Results Playwright Reporter",
+        mailOnSuccess: true,
+        linkToResults:
+          "https://github.com/vishalmrode/PlaywrightAutomation/tree/main/allure-report",
+        showError: true,
+      },
+    ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

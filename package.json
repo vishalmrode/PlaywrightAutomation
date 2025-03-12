@@ -15,5 +15,8 @@
     "allure-playwright": "^3.0.6",
     "playwright-bdd": "^7.0.1",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "playwright-mail-reporter": "^0.0.8"
   }
 }
