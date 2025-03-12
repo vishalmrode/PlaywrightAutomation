@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2939","Handle Radio Buttons","chromium","Thu Nov 14 09:20:29 IST 2024","passed","Thu Nov 14 09:20:32 IST 2024","","Radiobutton.spec.js","",""
-"","3450","Handle Radio Buttons","firefox","Thu Nov 14 09:20:29 IST 2024","passed","Thu Nov 14 09:20:33 IST 2024","","Radiobutton.spec.js","",""
-"","3349","Handle Radio Buttons","webkit","Thu Nov 14 09:20:29 IST 2024","passed","Thu Nov 14 09:20:33 IST 2024","","Radiobutton.spec.js","",""
