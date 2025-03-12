@@ -90,3 +90,9 @@ jobs:
       - name: Display Allure report link
         run: |
           echo "Allure report is available at: https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}"
+
+      - name: Run Playwright tests
+        env:
+          RESEND_USER_NAME: ${{ secrets.RESEND_USER_NAME }}
+          RESEND_PASSWORD: ${{ secrets.RESEND_PASSWORD }}
+        run: npx playwright test ChildWindowHandling.spec.js --reporter=playwright-mail-reporter
