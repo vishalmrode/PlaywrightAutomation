@@ -15,14 +15,3 @@ test.describe('Revenue Sorting Tests', () => {
         await pageObject.verifyRevenueSortedDescending(); // Verify descending order
     });
 });
-
-// Modification to the verifyRevenueSortedDescending function
-async function verifyRevenueSortedDescending() {
-    const revenueValues = await this.getRevenueValues();
-    console.log('Revenue values:', revenueValues); // Debugging step
-
-    // Check if the revenue values are sorted in descending order
-    for (let i = 0; i < revenueValues.length - 1; i++) {
-        expect(revenueValues[i]).toBeGreaterThanOrEqual(revenueValues[i + 1]);
-    }
-}

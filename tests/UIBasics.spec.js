@@ -30,5 +30,5 @@ test("Browser context First Test case", async ({ browser }) => {
   console.log(await cardTitles.nth(1).textContent()); // get the value by index
 
   const allTitles = await cardTitles.allTextContents();
-  console.log(allTitles);
+  console.table(allTitles);
 });
