@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
-import { PageObject } from '../page/PageObjects';
+import { PageSort } from '../page/PageSort';
 
 test.describe('Revenue Sorting Tests', () => {
-    let pageObject: PageObject;
+    let pageObject: PageSort;
 
     test.beforeEach(async ({ page }) => {
         await page.goto('https://interview-exercise-blush.vercel.app/');
-        pageObject = new PageObject(page);
+        pageObject = new PageSort(page);
     });
 
     test('Sort Revenue column in descending order', async () => {
