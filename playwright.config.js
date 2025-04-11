@@ -12,11 +12,15 @@ const { defineConfig, devices } = require("@playwright/test");
  */
 module.exports = defineConfig({
   testDir: "./tests",
+
+  shard: { total: 5, current: 1 },
+  globalTimeout: 3_600_000, //   2 min
   timeout: 40000, // Default timeout is 30 sec, you can override it @see https://playwright.dev/docs/test-timeouts
   expect: {
     timeout: 50000, // Assertion Timeout // You can also write 50*1000
   },
-
+  // These settings control whether git information is captured and stored in the config
+  captureGitInfo: { commit: true, diff: true },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test in the source code. */
@@ -26,6 +30,11 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  //grep:/smoke,
+  //grepInvert: "@regression",
+
+  //maxFailures: process.env.CI ? 1 : 0,
+
   reporter: [
     ["line"],
     ["html"],
@@ -44,6 +53,10 @@ module.exports = defineConfig({
     headless: true, // You can make it true or false on the basis of execution to be UI mode or headless by changing the value
     screenshot: "on",
     trace: "on",
+    video: "on",
+    actionTimeout: 10 * 1000,
+    navigationTimeout: 30 * 1000,
+
     //trace: 'retain-on-failure'
     //trace: "on-first-retry",
     // Check the traces on https://trace.playwright.dev/ in detail by uploading the zip file present in test results folder
