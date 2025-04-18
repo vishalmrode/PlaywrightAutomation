@@ -108,8 +108,15 @@ npm playwright -v
 
 3. Create a test block:
 
-   ```javascript
-   test(title, testFunction);
+   ```
+      import { test, expect } from '@playwright/test';
+
+   test('has title', async ({ page }) => {
+     await page.goto('https://playwright.dev/');
+
+   // Verify that the page title contains the substring "Playwright" to ensure the correct page is loaded.
+     await expect(page).toHaveTitle(/Playwright/);
+   });
    ```
 
    - Use `async` before a function to make it return a promise.
