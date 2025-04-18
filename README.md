@@ -41,7 +41,7 @@ Official Website: [PlayWright](https://playwright.dev/docs/intro).
    - `npm playwright -v` //return installed version of playwright.
 5) Update Playwright
    `npm install -D @playwright/test@latest`
-   #### Also download new browser binaries and their dependencies:
+   <!-- Also download new browser binaries and their dependencies: -->
    `npx playwright install --with-deps`
 
 ## Install Cucumber
