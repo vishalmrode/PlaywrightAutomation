@@ -12,6 +12,10 @@ const { defineConfig, devices } = require("@playwright/test");
  */
 module.exports = defineConfig({
   testDir: "./tests",
+  /*Whether to exit with an error if any tests are marked as flaky. Useful on CI.
+  Also available in the command line with the `--fail-on-flaky-tests` option. */
+
+  failOnFlakyTests: !!process.env.CI,
 
   shard: { total: 5, current: 1 },
   globalTimeout: 3_600_000, //   2 min
@@ -28,7 +32,7 @@ module.exports = defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 10 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //grep:/smoke,
   //grepInvert: "@regression",
