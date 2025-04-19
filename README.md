@@ -124,7 +124,7 @@ npm playwright -v
 
 4. Run the test using the following commands:
    Here are the most common options available in the command line.
-   Reference: [`Command Line`] (https://playwright.dev/docs/test-cli).
+   Reference: [Command Line](https://playwright.dev/docs/test-cli).
 
 | Command                                                           | Description                                      |
 | :---------------------------------------------------------------- | :----------------------------------------------- |
