@@ -1,1 +1,1 @@
-{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[]}
+{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[{"name":"CllientE2E.spec.js","children":[{"name":"@Webst Client App login","uid":"1ca481816f932507","parentUid":"49e245424c773405bf5dc4303e72d20e","status":"passed","time":{"start":1746857744084,"stop":1746857755100,"duration":11016},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[],"tags":["Webst"]}],"uid":"CllientE2E.spec.js"}]}

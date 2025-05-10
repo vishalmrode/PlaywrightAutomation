@@ -1,1 +1,1 @@
-{"uid":"98d3104e051c652961429bf95fa0b5d6","name":"suites","children":[]}
+{"uid":"98d3104e051c652961429bf95fa0b5d6","name":"suites","children":[{"name":"@Webst Client App login","uid":"1ca481816f932507","parentUid":"98d3104e051c652961429bf95fa0b5d6","status":"passed","time":{"start":1746857744084,"stop":1746857755100,"duration":11016},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[],"tags":["Webst"]}]}
