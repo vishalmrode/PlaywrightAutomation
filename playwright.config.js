@@ -58,6 +58,7 @@ module.exports = defineConfig({
     screenshot: "on",
     trace: "on",
     video: "on",
+    ignoreHTTPSErrors: true,
     actionTimeout: 10 * 1000,
     navigationTimeout: 30 * 1000,
 
@@ -65,49 +66,49 @@ module.exports = defineConfig({
     //trace: "on-first-retry",
     // Check the traces on https://trace.playwright.dev/ in detail by uploading the zip file present in test results folder
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: "https://practicesoftwaretesting.com/",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
   },
 
   /* Configure projects for major browsers */
-  // projects: [
-  //   {
-  //     name: "chromium",
-  //     use: { ...devices["Desktop Chrome"] },
-  //   },
+  projects: [
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"], permissions: ["clipboard-read"] },
+    },
 
-  //   {
-  //     name: "firefox",
-  //     use: { ...devices["Desktop Firefox"] },
-  //   },
+    //   {
+    //     name: "firefox",
+    //     use: { ...devices["Desktop Firefox"] },
+    //   },
 
-  //   {
-  //     name: "webkit",
-  //     use: { ...devices["Desktop Safari"] },
-  //   },
+    //   {
+    //     name: "webkit",
+    //     use: { ...devices["Desktop Safari"] },
+    //   },
 
-  //   /* Test against mobile viewport. */
-  //   // {
-  //   //   name: 'Mobile Chrome',
-  //   //   use: { ...devices['Pixel 5'] },
-  //   // },
-  //   // {
-  //   //   name: 'Mobile Safari',
-  //   //   use: { ...devices['iPhone 12'] },
-  //   // },
+    //   /* Test against mobile viewport. */
+    //   // {
+    //   //   name: 'Mobile Chrome',
+    //   //   use: { ...devices['Pixel 5'] },
+    //   // },
+    //   // {
+    //   //   name: 'Mobile Safari',
+    //   //   use: { ...devices['iPhone 12'] },
+    //   // },
 
-  //   /* Test against branded browsers. */
-  //   // {
-  //   //   name: 'Microsoft Edge',
-  //   //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-  //   // },
-  //   // {
-  //   //   name: 'Google Chrome',
-  //   //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-  //   // },
-  // ],
-
+    //   /* Test against branded browsers. */
+    //   // {
+    //   //   name: 'Microsoft Edge',
+    //   //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    //   // },
+    //   // {
+    //   //   name: 'Google Chrome',
+    //   //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    //   // },
+    // ],
+  ],
   /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',
