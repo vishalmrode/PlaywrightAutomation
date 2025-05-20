@@ -126,23 +126,24 @@ npm playwright -v
    Here are the most common options available in the command line.
    Reference: [Command Line](https://playwright.dev/docs/test-cli).
 
-| Command                                                           | Description                                      |
-| :---------------------------------------------------------------- | :----------------------------------------------- |
-| `npx playwright test --project=chromium --headed example.spec.js` | Runs the file on a specific browser.             |
-| `npx playwright test`                                             | Runs all tests on all browsers in headless mode. |
-| `npx playwright test example.spec.js`                             | Runs a specific test file.                       |
-| `npx playwright test example.spec.js MyTest2.spec.js`             | Runs the specified files.                        |
-| `npx playwright test -g "test title"`                             | Runs tests with the specified title.             |
-| `npx playwright test --project=chromium`                          | Runs tests on a specific browser.                |
-| `npx playwright test --headed`                                    | Runs tests in headed mode.                       |
-| `npx playwright test --debug`                                     | Runs tests in debug mode.                        |
-| `npx playwright test example.spec.js --debug`                     | Debugs a specific test file.                     |
-| `npx playwright test --reporter=list`                             | Displays test results in the terminal.           |
-| `npx playwright test --ui`                                        | Opens Playwright in UI mode.                     |
-| `npx playwright codegen`                                          | Opens the Playwright Record window.              |
-| `npx playwright test --retries 2`                                 | Retries failed tests.                            |
-| `npx playwright test tests/todo-page/ tests/landing-page/`        | Runs multiple tests.                             |
-| `npx playwright test --grep @fast`                                | Runs tests with specific tags only.              |
+| Command                                                           | Description                                                                          |
+| :---------------------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| `npx playwright test --project=chromium --headed example.spec.js` | Runs the file on a specific browser.                                                 |
+| `npx playwright test`                                             | Runs all tests on all browsers in headless mode.                                     |
+| `npx playwright test example.spec.js`                             | Runs a specific test file.                                                           |
+| `npx playwright test example.spec.js MyTest2.spec.js`             | Runs the specified files.                                                            |
+| `npx playwright test -g "test title"`                             | Runs tests with the specified title.                                                 |
+| `npx playwright test --project=chromium`                          | Runs tests on a specific browser.                                                    |
+| `npx playwright test --headed`                                    | Runs tests in headed mode.                                                           |
+| `npx playwright test --debug`                                     | Runs tests in debug mode.                                                            |
+| `npx playwright test example.spec.js --debug`                     | Debugs a specific test file.                                                         |
+| `npx playwright test --reporter=list`                             | Displays test results in the terminal.                                               |
+| `npx playwright test --ui`                                        | Opens Playwright in UI mode.                                                         |
+| `npx playwright codegen`                                          | Opens the Playwright Record window.                                                  |
+| `npx playwright test --retries 2`                                 | Retries failed tests.                                                                |
+| `npx playwright test tests/todo-page/ tests/landing-page/`        | Runs multiple tests.                                                                 |
+| `npx playwright test --grep @fast`                                | Runs tests with specific tags only.                                                  |
+| `npx playwright test example.spec.js --update-snapshot`           | We can use this for visual testing. Update the snapshot(override existing snapshot). |
 
 ---
 
