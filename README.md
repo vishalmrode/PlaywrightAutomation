@@ -144,6 +144,7 @@ npm playwright -v
 | `npx playwright test tests/todo-page/ tests/landing-page/`        | Runs multiple tests.                                                                 |
 | `npx playwright test --grep @fast`                                | Runs tests with specific tags only.                                                  |
 | `npx playwright test example.spec.js --update-snapshot`           | We can use this for visual testing. Update the snapshot(override existing snapshot). |
+| `npx playwright test:report`                                      | To open the report automatically once test execution completes                       |
 
 ---
 

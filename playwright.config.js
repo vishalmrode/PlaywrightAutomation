@@ -12,6 +12,7 @@ const { defineConfig, devices } = require("@playwright/test");
  */
 module.exports = defineConfig({
   testDir: "./tests",
+  testMatch: "**/*.spec.js",
   /*Whether to exit with an error if any tests are marked as flaky. Useful on CI.
   Also available in the command line with the `--fail-on-flaky-tests` option. */
 
